@@ -1,0 +1,2 @@
+flask db init => inicializar las migraciones en mi proyecto
+debemos instalar flask-migrate
