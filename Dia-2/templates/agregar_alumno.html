@@ -1,0 +1,74 @@
+{% extends 'base.html' %} {% block cuerpo %}
+<div class="container">
+  <form>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="ape_paterno" class="form-label">Ap. Paterno</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ape_paterno"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="ape_materno" class="form-label">Ap. Materno</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ape_materno"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo</label>
+      <input
+        type="email"
+        class="form-control"
+        id="correo"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="num_emergencia" class="form-label">Num. Emergencia</label>
+      <input
+        type="number"
+        class="form-control"
+        id="num_emergencia"
+        aria-describedby="emailHelp"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="num_emergencia" class="form-label">Curso</label>
+      <select class="form-select" id="curso_id" aria-label="Default select example">
+        <option selected  value="--">NINGUNO</option>
+        {# el value debe ser el id de ese curso en la base de datos #}
+        <option value="1">MATEMATICA</option>
+        <option value="2">CTS</option>
+        <option value="3">ARTE</option>
+        <option value="4">EDUCACION FISICA</option>
+        <option value="5">INGLES</option>
+        <option value="6">COMUNICACION</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" id="btn_agregar">
+      Agregar
+    </button>
+  </form>
+</div>
+{% endblock %} {% block scripts%} {#
+<script src="../static/js/agregar_alumno.js"></script>
+#} {# para agregar archivos js, css o imagenes es recomendable utilizar el
+statement url_for en el cual se indica que tipo de archivo y ademas su nombre de
+archivo #}
+<script src="{{ url_for('static', filename='js/agregar_alumno.js') }}"></script>
+{% endblock %}
